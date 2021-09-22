@@ -1,0 +1,30 @@
+- hosts: servidores
+  become: true
+  tasks:
+      # Crea un usuario con mi nombre
+    - name: "Crear usuario dparrales"
+      user:
+        name: dparrales
+        comment: Daniel Parrales
+        password: $y$j9T$F8YgbL/VS5VEpxj2KBmCH1$ceIv4m2BNGbExja2SVzftymJBrpOElfXckP90F3fiF0
+        state: present
+        home: /home/dparrales
+        shell: /bin/bash
+      # Descarga el fichero desde la url https://wordpress.org/latest.zip
+    - name: "Decarga latest.zip"
+      get_url:
+        url: https://wordpress.org/latest.zip
+        dest: /home/dparrales/latest.zip
+      # Descomrpime el paquete
+    - name: "Descomprime latest.zip"
+      shell: unzip latest.zip
+#        name: git
+      # Copia un fichero a la máquina remoto
+#    - name: "Copiar fichero al servidor remoto"
+#      copy:
+#        src: files/foo.conf
+#        dest: /etc/foo.conf
+#        owner: root
+#        group: root
+#        mode: '0644'
+    
