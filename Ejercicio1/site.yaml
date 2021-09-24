@@ -16,11 +16,21 @@
         url: https://wordpress.org/latest.zip
         dest: /home/dparrales/latest.zip
       # Descomrpime el paquete
+    - name: "Instala los paquetes necesarios"
+      apt:
+        pkg:
+          - unzip
+          - mariadb-server
+          - python3-mysqldb
     - name: "Descomprime latest.zip"
       unarchive:
         remote_src: yes
         src: /home/dparrales/latest.zip
         dest: /home/dparrales/
+    - name: "Crear una base de datos llamada minombre_wordpress"
+      mysql_db:
+        name: daniel_wordpress
+        state: present
 #        name: git
       # Copia un fichero a la máquina remoto
 #    - name: "Copiar fichero al servidor remoto"
