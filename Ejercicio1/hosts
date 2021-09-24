@@ -1,2 +1,2 @@
 [servidores]
-nodo1 ansible_ssh_host=192.168.122.56 
+nodo1 ansible_ssh_host=192.168.122.69 
