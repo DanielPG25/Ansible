@@ -17,7 +17,10 @@
         dest: /home/dparrales/latest.zip
       # Descomrpime el paquete
     - name: "Descomprime latest.zip"
-      shell: unzip latest.zip
+      unarchive:
+        remote_src: yes
+        src: /home/dparrales/latest.zip
+        dest: /home/dparrales/
 #        name: git
       # Copia un fichero a la máquina remoto
 #    - name: "Copiar fichero al servidor remoto"
