@@ -34,8 +34,9 @@
         state: present
     - name: "Crear usuario llamado mysql_daniel con privilegios sobre esa base de datos"
       mysql_user:
-        name: mysql_daniel
-        password: asdasd
+        name: my_daniel
+        encrypted: yes
+        password: '*84DE6A1B69BF18442A81B899AABC31929CA8BB9F'
         priv: daniel_wordpress.*:ALL,GRANT
     - name: "Clonar repositorio github"
       git:
