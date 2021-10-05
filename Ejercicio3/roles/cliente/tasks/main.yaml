@@ -1,0 +1,4 @@
+- name: elimina la ruta por defecto
+  shell: ip route delete default via 192.168.121.1 dev eth0
+- name: añade la nueva ruta por defecto
+  shell: ip route add default via 10.0.0.1 dev eth1
