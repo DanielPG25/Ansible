@@ -1,11 +1,8 @@
 - name: Añadir clave pública ssh
-  template:
-    src: authorized_keys
-    dest: /home/vagrant/.ssh/authorized_keys
-    owner: vagrant
-    group: vagrant
-    mode: '0600'
-
+  authorized_key:
+    user: vagrant
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 - name: Cambiar la plantilla de network/interfaces
   template:
     src: interfaces
