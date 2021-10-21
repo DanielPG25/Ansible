@@ -1,0 +1,6 @@
+mysql_root_password: "root"
+app_user: "www-data"
+http_host: "www.dparrales-mediawiki.com"
+http_conf: "dparrales-mediawiki.conf"
+http_port: "80"
+disable_default: true

@@ -1,0 +1,9 @@
+- name: configure lamp
+  hosts: lampstack
+  become: yes
+  become_method: sudo
+  vars_files:
+    - group_vars/all
+  roles:
+    - apache
+    - mariadb
